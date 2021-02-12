@@ -1,0 +1,15 @@
+<ion-card style="position: fixed; top: 5;background-color: white;">
+    <ion-card-header>
+        <ion-card-title>Vos articles : </ion-card-title>
+    </ion-card-header>
+        <li class="panier-items" *ngFor="let choix of panier" class="article">
+            Costume : {{articles[choix].name}} | Prix : {{articles[choix].price}} € | <a class="close remove" (click)="removeArticle(articles[choix].id)">X</a>
+        </li>
+    <div class="cartRub total"> 
+        Total de vos achats : {{totalPanier}} €
+    </div>
+    <br>
+    <button class="btn btn-outline-success valider">Validez vos achats</button>
+    <br>
+    <span class="livraison">Livré chez vous en 48H sous pli discret!</span>
+</ion-card>

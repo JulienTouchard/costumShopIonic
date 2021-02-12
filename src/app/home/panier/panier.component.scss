@@ -1,0 +1,40 @@
+.panier{
+    position: fixed;
+    right: 50px;
+    top:50px;
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 4px 2px 5px 0px rgba(204,204,204,1);
+    -moz-box-shadow: 4px 2px 5px 0px rgba(204,204,204,1);
+    box-shadow: 4px 2px 5px 0px rgba(204,204,204,1);  
+
+}
+.panier-items{
+    margin-left: 20px;
+}
+.livraison{
+    font-size: 0.7em;
+    font-style: italic;
+
+}
+.cartRub{
+    display: inline-block;
+}
+.total{
+    float: right;
+    margin-right: 20px;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+    font-weight: 500;
+    box-shadow: 4px 2px 5px 0px rgba(204,204,204,1);
+}
+.remove:hover{
+    cursor: pointer !important;
+}
+.valider{
+    margin-top: 20px
+}

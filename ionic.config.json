@@ -1,0 +1,7 @@
+{
+  "name": "costumShopIonic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

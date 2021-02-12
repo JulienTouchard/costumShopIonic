@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <app-menu></app-menu>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title>Nos Articles :</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-panier *ngIf="menuPanier"></app-panier>
+  <app-article></app-article>
+  <app-footer></app-footer>
+
+</ion-content>

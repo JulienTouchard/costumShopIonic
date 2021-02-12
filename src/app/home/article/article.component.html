@@ -1,0 +1,14 @@
+<div class="main-article">
+    <div *ngFor="let article of articles" class="article">
+            <h1>{{article.name}}</h1>
+        <img [src]="article.url" [alt]="article.description" [width]="article.largeur">
+        <p>
+            <span class="price">{{article.price}} € </span>
+            <span *ngIf="article.promo" class="promo badge badge-success">Promo</span>
+        </p>
+        <p>
+            {{article.description}}
+        </p>
+        <ion-button expand="block" (click)="selectArticle(article.id);calculPanier();">Add to cart</ion-button>
+    </div>
+</div>

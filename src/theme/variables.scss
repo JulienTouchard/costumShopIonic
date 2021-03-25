@@ -1,6 +1,53 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+
+// ajout de couleurs personnalisées
+// cf new color creator :
+// https://ionicframework.com/docs/theming/colors
+:root {
+  --ion-color-favorite: #69bb7b;
+  --ion-color-favorite-rgb: 105, 187, 123;
+  --ion-color-favorite-contrast: #ffffff;
+  --ion-color-favorite-contrast-rgb: 255, 255, 255;
+  --ion-color-favorite-shade: #5ca56c;
+  --ion-color-favorite-tint: #78c288;
+  // background color de toute l'application
+  --ion-background-color: #ffffff;
+  --ion-background-color-rgb: 255, 255, 255;
+
+  --ion-text-color: #ea5757;
+  --ion-text-color-rgb: 234, 87, 87;
+}
+
+.ion-color-favorite {
+  --ion-color-base: var(--ion-color-favorite);
+  --ion-color-base-rgb: var(--ion-color-favorite-rgb);
+  --ion-color-contrast: var(--ion-color-favorite-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-favorite-contrast-rgb);
+  --ion-color-shade: var(--ion-color-favorite-shade);
+  --ion-color-tint: var(--ion-color-favorite-tint);
+}
+
+//  utilisation dans un component ionic :
+//  <ion-text color="favorite">qzsdqsdqd</ion-text>
+//  utilisation "custom" dans le css :
+/* 
+    div {
+        background: var(--ion-color-favorite);
+        color: var(--ion-color-favorite-contrast);
+    }
+*/
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -153,8 +200,8 @@
    */
 
   .ios body {
-    --ion-background-color: #000000;
-    --ion-background-color-rgb: 0,0,0;
+    --ion-background-color: #fff;
+    --ion-background-color-rgb: 255,255,255;
 
     --ion-text-color: #ffffff;
     --ion-text-color-rgb: 255,255,255;

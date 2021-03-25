@@ -17,7 +17,7 @@ export class ArticleComponent implements OnInit {
   panier : any = [];
   totalPanier : number = 0;
   
-  selectArticle(id){
+  selectArticle(id: any){
     // ajout des id articles dans l'array panier
     this.panier.push(id);
     this.dataService.insertPanier.next(this.panier);
@@ -25,7 +25,7 @@ export class ArticleComponent implements OnInit {
   calculPanier(){
     // calcule de la somme du panier
     this.totalPanier = 0; 
-    this.panier.map((num)=>{
+    this.panier.map((num: string | number)=>{
       this.totalPanier += this.articles[num].price;
     });
     this.dataService.calcPanier.next(this.totalPanier);

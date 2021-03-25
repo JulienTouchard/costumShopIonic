@@ -24,4 +24,5 @@ export class PanierComponent implements OnInit {
     this.dataService.insertPanier.subscribe(status=>this.panier = status);
     this.dataService.calcPanier.subscribe(status=>this.totalPanier = status);
   }
+  
 }

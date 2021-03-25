@@ -1,14 +1,14 @@
-<ion-header>
+<div class="menu">
   <ion-chip color="primary" mode="ios" outline="true">
-    <ion-label>Home</ion-label>
+    <ion-label class="menuBtn">Home</ion-label>
     <ion-icon name="home"></ion-icon>
   </ion-chip>
   <ion-chip color="primary" mode="ios" outline="true" (click)="switchPanier()" name="cart">
-    <ion-label>Cart {{panier.length}}</ion-label>
-    <ion-icon name="cart"></ion-icon>
+    <ion-label class="menuBtn">Cart </ion-label>
+    <ion-icon name="cart"></ion-icon><ion-badge color="primary" slot="end">{{panier.length}}</ion-badge>
   </ion-chip>
   <ion-chip color="primary" mode="ios" outline="true" name="Contact">
-    <ion-label>Contact</ion-label>
+    <ion-label class="menuBtn">Contact</ion-label>
     <ion-icon name="mail"></ion-icon>
   </ion-chip>
-</ion-header>
+</div>

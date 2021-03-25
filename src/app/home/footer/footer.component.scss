@@ -1,11 +1,14 @@
 .appFooter{
-    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     bottom: 0;
     width: 100vw;
-    height: 150px;
+    font-size: 1rem;
     background: grey;
+}
+a{
+    padding: .5rem ;
+    color: blue;
 }

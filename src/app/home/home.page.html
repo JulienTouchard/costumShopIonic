@@ -1,16 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-text-center">
-     CostumShop
+    <ion-title class="ion-text-center" color="primary" class="headApp">
+      CostumShop
     </ion-title>
+    <app-menu></app-menu>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-toolbar>
-      <app-menu></app-menu>
-   </ion-toolbar>
-  <app-panier *ngIf="menuPanier"></app-panier>
+  
+  <app-panier></app-panier>
   <app-article></app-article>
 </ion-content>
 

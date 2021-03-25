@@ -1,15 +1,18 @@
-<ion-card style="position: fixed; top: 5;background-color: white;">
-    <ion-card-header>
-        <ion-card-title>Vos articles : </ion-card-title>
+<div id="back" (click)="close('#back');">
+  <ion-card id="panier" (click)="stopP($event);">
+    <div class="close" (click)="close('#back');">X</div>
+    <ion-card-header class="liste">
+      <ion-card-title class="cardTitle">Vos articles : </ion-card-title>
     </ion-card-header>
-        <li class="panier-items" *ngFor="let choix of panier" class="article">
-            Costume : {{articles[choix].name}} | Prix : {{articles[choix].price}} € | <a class="close remove" (click)="removeArticle(articles[choix].id)">X</a>
-        </li>
-    <div class="cartRub total"> 
-        Total de vos achats : {{totalPanier}} €
+    <li class="panier-items" *ngFor="let choix of panier">
+      <div>✔</div> <img src="{{articles[choix].url}}" alt=""> Costume : {{articles[choix].name}} Prix :
+      {{articles[choix].price}} € <a class="remove"
+        (click)="removeArticle(articles[choix].id);decrementCountPanier();calculPanier();">X</a>
+    </li>
+    <div class="cartRub total">
+      Total de vos achats :<br>{{totalPanier}} €
     </div>
-    <br>
     <button class="btn btn-outline-success valider">Validez vos achats</button>
-    <br>
     <span class="livraison">Livré chez vous en 48H sous pli discret!</span>
-</ion-card>
+  </ion-card>
+</div>

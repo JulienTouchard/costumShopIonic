@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import {DataService} from './data.service';
+import { CostumProductsService } from './services/costum-products.service';
 
 @Component({ 
   selector: 'app-home',
@@ -7,12 +7,12 @@ import {DataService} from './data.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage  implements OnInit {
-  constructor(private dataService : DataService){
+  constructor(private costumProductsService : CostumProductsService){
 
   }
   menuPanier : boolean;
   ngOnInit() {
-    this.dataService.togglePanier.subscribe(status=>this.menuPanier = status);
+    this.costumProductsService.togglePanier.subscribe(status=>this.menuPanier = status);
   }
  
 

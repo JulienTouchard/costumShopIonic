@@ -3,10 +3,16 @@
     <ion-label class="menuBtn">Home</ion-label>
     <ion-icon name="home"></ion-icon>
   </ion-chip>
-  <ion-chip color="primary" mode="ios" outline="true" (click)="switchPanier()" name="cart">
-    <ion-label class="menuBtn">Cart </ion-label>
-    <ion-icon name="cart"></ion-icon><ion-badge color="primary" slot="end">{{panier.length}}</ion-badge>
-  </ion-chip>
+  <div class="panBadge">
+    <ion-chip color="primary" mode="ios" outline="true" (click)="open('#back');" name="cart">
+      <ion-label class="menuBtn">Cart </ion-label>
+      <ion-icon name="cart"></ion-icon>
+    </ion-chip>
+    <span class="pill" *ngIf="countPanier>0">
+      <ion-badge color="primary" slot="end">{{countPanier}}</ion-badge>
+    </span>
+  </div>
+
   <ion-chip color="primary" mode="ios" outline="true" name="Contact">
     <ion-label class="menuBtn">Contact</ion-label>
     <ion-icon name="mail"></ion-icon>

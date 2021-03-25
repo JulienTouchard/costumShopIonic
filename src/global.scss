@@ -26,3 +26,11 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 
+.fadeOut{
+    transition: all .3s;
+    opacity: 0;
+}
+.fadeIn{
+    transition: all .3s;
+    opacity: 1;
+}

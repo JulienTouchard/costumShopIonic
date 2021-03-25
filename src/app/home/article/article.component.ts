@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../data.service';
-import { CostumesService } from '../costumes.service';
+import { CostumProductsService } from '../services/costum-products.service';
+
 
 @Component({
   selector: 'app-article',
@@ -9,18 +9,16 @@ import { CostumesService } from '../costumes.service';
 })
 
 export class ArticleComponent implements OnInit {
-  constructor(
-    private dataService : DataService ,
-    private costumesService : CostumesService
-    ){}
-  articles = this.costumesService.articles;
+  constructor(private costumProductsService : CostumProductsService){}
+  articles = this.costumProductsService.articles;
   panier : any = [];
   totalPanier : number = 0;
+  countPanier : number = 0; 
   
   selectArticle(id: any){
     // ajout des id articles dans l'array panier
     this.panier.push(id);
-    this.dataService.insertPanier.next(this.panier);
+    this.costumProductsService.insertPanier.next(this.panier);
   }
   calculPanier(){
     // calcule de la somme du panier
@@ -28,11 +26,16 @@ export class ArticleComponent implements OnInit {
     this.panier.map((num: string | number)=>{
       this.totalPanier += this.articles[num].price;
     });
-    this.dataService.calcPanier.next(this.totalPanier);
+    this.costumProductsService.gestionTotalPanier.next(this.totalPanier);
     console.log(this.totalPanier);
   }
+  incrementTotalPanier(){
+    this.countPanier++;
+    this.costumProductsService.gestionCountPanier.next(this.countPanier);
+  }
   ngOnInit() {
-    this.dataService.insertPanier.subscribe(status=>this.panier = status);
-    this.dataService.calcPanier.subscribe(status=>this.totalPanier = status);
+    this.costumProductsService.insertPanier.subscribe(status=>this.panier = status);
+    this.costumProductsService.gestionTotalPanier.subscribe(status=>this.totalPanier = status);
+    this.costumProductsService.gestionCountPanier.subscribe(status=>this.countPanier = status);
   }
 }

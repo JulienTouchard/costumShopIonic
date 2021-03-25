@@ -31,3 +31,12 @@
     display: flex;
     justify-content: space-between;
 }
+.panBadge{
+    position: relative;
+}
+.pill{
+    position: absolute;
+    right: -.2rem;
+    top: -.2rem;
+    z-index: 10;
+}

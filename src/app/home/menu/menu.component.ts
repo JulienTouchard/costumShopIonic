@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../data.service';
+import { CostumProductsService } from '../services/costum-products.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,15 +8,27 @@ import {DataService} from '../data.service';
 })
 
 export class MenuComponent implements OnInit {
-  constructor(private dataService : DataService){
+  constructor(private costumProductsService : CostumProductsService){
   }
-  panier = this.dataService.togglePanier;
+  countPanier : number;
   menuPanier = false;
   switchPanier(){
-    this.dataService.togglePanier.next(!this.menuPanier);
+    this.costumProductsService.togglePanier.next(!this.menuPanier);
+  }
+  open(selector){
+    console.log(selector);
+    let elem = document.querySelector(selector) as HTMLElement;
+    elem.style.display = "flex";
+    elem.classList.remove("fadeOut");
+    elem.classList.add("fadeIn");
+    /* elem.addEventListener("transitionend", ()=>{
+      console.log("fin de transition fadeOut");
+      elem.style.display = "none";
+    }); */
   }
   
   ngOnInit() {
-    this.dataService.togglePanier.subscribe(status=>this.menuPanier = status);
+    this.costumProductsService.togglePanier.subscribe(status=>this.menuPanier = status);
+    this.costumProductsService.gestionCountPanier.subscribe(status=>this.countPanier = status);
   }
 }
